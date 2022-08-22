@@ -21,6 +21,7 @@ export function SearchInput({ postsLength, getPosts }: SearchInputProps) {
 
   async function handleSearchPosts(data: SearchFormInput) {
     await getPosts(data.query);
+    console.log(getPosts)
   }
 
   return (

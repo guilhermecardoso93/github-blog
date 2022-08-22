@@ -30,7 +30,7 @@ export function Blog() {
       try {
         setIsLoading(true);
         const response = await api.get(
-          `/search/issues?q=${query}%20label:published%20repo:guilhermecardoso93/github-blog/`
+          `/search/issues?q=%20label:published%20repo:${username}/${repoName}/`
         );
 
         setPosts(response.data.items);

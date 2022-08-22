@@ -7,15 +7,17 @@ interface PostProps {
 }
 
 export function Post({ post }: PostProps) {
-  const formattedDate = relativeDateFormatter(post.created_at);
+  const formattedDate = relativeDateFormatter(post.created_at)
 
   return (
-    <PostContainer to={`/post/${post.number}`}>
+    <PostContainer to={`post/${post.number}`}>
       <div>
         <strong>{post.title}</strong>
         <span>{formattedDate}</span>
       </div>
-      <p>{post.body}</p>
+      <p>
+        {post.body}
+      </p>
     </PostContainer>
   );
 }

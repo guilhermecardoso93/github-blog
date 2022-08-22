@@ -15,7 +15,6 @@ export function Post() {
       setIsLoading(true);
       const response = await api.get(`/repos/guilhermecardoso93/github-blog/issues/${id}`);
       setPostData(response.data);
-      console.log(response.data)
     } finally {
       setIsLoading(false);
     }

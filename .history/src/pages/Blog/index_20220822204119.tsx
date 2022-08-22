@@ -6,8 +6,8 @@ import { Profile } from "./components/Profile";
 import { SearchInput } from "./components/SearchInput";
 import { PostListContainer } from "./styles";
 
-const username = import.meta.env.VITE_GITHUB_USERNAME;
-const repoName = import.meta.env.VITE_GITHUB_REPONAME;
+const username = import.meta.env.local.VITE_GITHUB_USERNAME;
+const repoName = import.meta.env.local.VITE_GITHUB_REPONAME;
 
 export interface IPost {
   title: string;
@@ -30,7 +30,7 @@ export function Blog() {
       try {
         setIsLoading(true);
         const response = await api.get(
-          `/search/issues?q=${query}%20label:published%20repo:guilhermecardoso93/github-blog/`
+          `/search/issues?q=${query}%20label:published%20repo:${username}/${repoName}/`
         );
 
         setPosts(response.data.items);
